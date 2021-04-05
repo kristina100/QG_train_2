@@ -28,10 +28,10 @@ typedef struct Stack
 
 void Quit();
 int Priority(char ch);
-int InitStack(Stack *stack);
+int initLStack(Stack *stack);
 int push(Stack *s, int num);
-int GetTop(Stack *s);
+int getTopLStack(Stack *s);
 int pop(Stack *s);
-int EmptyStack(Stack *s);
+int isemptyStack(Stack *s);
 
 #endif

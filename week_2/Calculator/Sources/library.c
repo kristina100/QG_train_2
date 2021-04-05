@@ -1,4 +1,5 @@
 #include "library.h"
+
 void Menu()
 {
     printf("\t\t|------------------------------------------|\n");
@@ -12,6 +13,7 @@ void Menu()
     printf("\t\t|              7    8    9   *             |\n");
     printf("\t\t|              0    (    )   /             |\n");
     printf("\t\t|   tips:Only supports integer operations. |\n");
+    printf("\t\t|   Reference:CSDN and Google.             |\n");
     printf("\t\t|------------------------------------------|\n");
     printf("\t\t \n");
 }
@@ -37,84 +39,107 @@ int Priority(char ch)
 
 int Menu0()
 {
-    Stack s_num,s_opt;	//定义数字栈、符号栈
+    Stack s_digit,s_opt;	//Define number stack and symbol stack.
     while (1)
     {
-        if (InitStack(&s_num) == ERROR || InitStack(&s_opt) == ERROR)
+        if (initLStack(&s_digit) == ERROR || initLStack(&s_opt) == ERROR)
         {
             printf("\t\tInitialization failed!\n");
-            return -1;
+            return -1;//Initialization failed.
         }
 
-        char opt[128] = {0};
-        int i = 0, tmp = 0, num1, num2;
+        char opt[128] = {0};//Log user input.
+        int i = 0, tmp = 0, digit1, digit2;
 
         printf("Please enter the expression:\n");
-        scanf("%s", opt);//接受表达式
+        scanf("%s", opt);//Accept expression.
         if (opt[0] == '@')
         {
             Quit();
             break;
         }
-        while (opt[i] != '\0' || EmptyStack(&s_opt) != SUCCESS) //表达式不为空或栈不为空 执行
+        while (opt[i] != '\0' || isemptyStack(&s_opt) != SUCCESS) /*The expression is not empty or
+                                                                    the stack is not empty. Execute.*/
         {
-            if (opt[i] >= '0' && opt[i] <= '9')    //下一位是数字，求出asc码
+            if (opt[i] >= '0' && opt[i] <= '9')    //The next digit is a number, find the ASCII code.
             {
                 tmp = tmp * 10 + (opt[i] - '0');
                 i++;
-                if (opt[i] < '0' || opt[i] > '9')    //下一位不是数字，将tmp入栈；若下位是数字继续循环
+                if (opt[i] < '0' || opt[i] > '9')    /* If the next digit is not a number,
+                                                        push tmp into the stack; if the next digit is a number,
+                                                        continue to loop */
                 {
-                    push(&s_num, tmp);
+                    push(&s_digit, tmp);
                     tmp = 0;
                 }
-            } else    //操作符
+            }
+            else    //Operator.
             {
-                if (EmptyStack(&s_opt) != SUCCESS && Priority(opt[i]) <= Priority((char) GetTop(&s_opt)) &&
-                    !((GetTop(&s_opt) == '(') && (opt[i] != ')')))
-                    //不是空栈，且优先级小于栈顶，
+                if (isemptyStack(&s_opt) != SUCCESS && Priority(opt[i]) <= Priority((char) getTopLStack(&s_opt)) &&
+                    !((getTopLStack(&s_opt) == '(') && (opt[i] != ')')))
+                    //Is not an empty stack, and the priority is less than the top of the stack.
                 {
-                    if (GetTop(&s_opt) == '(' && opt[i] == ')') {
+                    if (getTopLStack(&s_opt) == '(' && opt[i] == ')')
+                    {
                         pop(&s_opt);
                         i++;
                         continue;
                     }
-                    //此处可直接用else判断
-                    if (Priority(opt[i]) <= Priority((char) GetTop(&s_opt)) ||
-                        ((opt[i] == ')') && GetTop(&s_opt) != ')') ||
-                        opt[i] == '\0' && EmptyStack(&s_opt) != SUCCESS) {
+                    if (Priority(opt[i]) <= Priority((char) getTopLStack(&s_opt)) ||
+                        ((opt[i] == ')') && getTopLStack(&s_opt) != ')') ||
+                        opt[i] == '\0' && isemptyStack(&s_opt) != SUCCESS)
+                    {
                         switch (pop(&s_opt)) {
                             case '+':
-                                num1 = pop(&s_num);
-                                num2 = pop(&s_num);
-                                push(&s_num, num1 + num2);
+                                system("cls");
+                                digit1 = pop(&s_digit);
+                                digit2 = pop(&s_digit);
+                                push(&s_digit, digit1 + digit2);
+                                system("pause");
                                 break;
                             case '-':
-                                num1 = pop(&s_num);
-                                num2 = pop(&s_num);
-                                push(&s_num, num2 - num1);
+                                system("cls");
+                                digit1 = pop(&s_digit);
+                                digit2 = pop(&s_digit);
+                                push(&s_digit, digit2 - digit1);
+                                system("pause");
                                 break;
                             case '*':
-                                num1 = pop(&s_num);
-                                num2 = pop(&s_num);
-                                push(&s_num, num1 * num2);
+                                system("cls");
+                                digit1 = pop(&s_digit);
+                                digit2 = pop(&s_digit);
+                                push(&s_digit, digit1 * digit2);
+                                system("pause");
                                 break;
                             case '/':
-                                num1 = pop(&s_num);
-                                num2 = pop(&s_num);
-                                push(&s_num, num2 / num1);
+                                system("cls");
+                                digit1 = pop(&s_digit);
+                                digit2 = pop(&s_digit);
+                                if(digit1 == 0)
+                                {
+                                    printf("How dare you divide by Zero?\n");
+                                    system("pause");
+                                    break;
+                                }
+                                push(&s_digit, digit2 / digit1);
+                                system("pause");
                                 break;
-                        }
-                    }
-                } else {
+                        }//end of switch
+                    }//end of if
+                }//end of if
+                else
+                    {
                     push(&s_opt, opt[i]);
                     i++;
                 }
             }
-        }
-        printf("%d\n", GetTop(&s_num));
-    }
+        }//end of while
+        printf("%d\n", getTopLStack(&s_digit));
+    }//end of while
+    return 0;
 }
-int InitStack(Stack *s)
+
+int initLStack(Stack *s)
 {
     if (NULL == s)
     {
@@ -148,7 +173,7 @@ int push(Stack *s, int num)
     return SUCCESS;
 }
 
-int GetTop(Stack *s)
+int getTopLStack(Stack *s)
 {
     if (NULL == s)
     {
@@ -218,7 +243,7 @@ void Quit()
     }
 }
 
-int EmptyStack(Stack *s)
+int isemptyStack(Stack *s)
 {
     if (NULL == s)
     {
