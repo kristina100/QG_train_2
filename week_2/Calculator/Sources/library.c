@@ -50,7 +50,7 @@ int Menu0()
 
         char opt[128] = {0};//Log user input.
         int i = 0, tmp = 0, digit1, digit2;
-
+        Menu();
         printf("Please enter the expression:\n");
         scanf("%s", opt);//Accept expression.
         if (opt[0] == '@')
