@@ -43,20 +43,23 @@ Status InputCheck(ElemType *info)
         {
             continue;
         }
-        temp = temp*10 + (arr[i] - 48);//Print numbers (automatically filter symbols).
+        //Print numbers (automatically filter symbols).
+        temp = temp*10 + (arr[i] - 48);
     }
     *info = temp * simple;
     return succeed;
 }
 void Menu()
 {
-    int inputs;//User input.
+    //User input.
+    int inputs;
     int select;
     NodePtr T;
     BST_init(&T);
     Menu0();
     inputs = scanf("%d",&select);
-    while(inputs != 1) //Prevent users from entering illegally.
+    //Prevent users from entering illegally.
+    while(inputs != 1)
     {
         printf("Please enter an integer: \n");
         getchar();
@@ -64,7 +67,8 @@ void Menu()
     }
     while(1)
     {
-        if(select == 10)//If it is to destroy the stack, terminate the program.
+        //If it is to destroy the stack, terminate the program.
+        if(select == 10)
         {
             system("cls");
             Quit();
@@ -139,6 +143,7 @@ void Menu()
                 printf("\nTest InOrderTraverse module\n");
                 BST_inorderI(T);
                 printf("\nGreat! Test InOrderTraverse successfully.\n");
+                system("pause");
                 break;
             case 6:
                 system("cls");
@@ -568,12 +573,8 @@ Status BST_postorderR(NodePtr T)
             // Assign the top of the stack to p
             p = top_stack(&S);
 
-            /* If the right subtree of p is empty, then output p node.
-               And point r to p, p is set to empty. */
-            /* If the right subtree of p has been output, then output p node.
-               And set r to p, p is set to empty. */
-            /* Otherwise, put the right subtree into the stack, and assign the left subtree to p,
-               and proceed to the next round of loop. */
+            /* If the right subtree of p is empty */
+            /* If the right subtree of p has been output */
             /* Where r represents the last output node. */
 
             if (!p->right || p->right == r)
@@ -583,6 +584,8 @@ Status BST_postorderR(NodePtr T)
                 r = p;
                 p = NULL;
             }
+            /* Otherwise, put the right subtree into the stack, and assign the left subtree to p,
+               and proceed to the next round of loop. */
             else
             {
                 p = p->right;
