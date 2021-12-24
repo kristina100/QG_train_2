@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/HUAWEI/CLionProjects/forest/CSTree.cpp
+iostream
+-
+Commn.h
+C:/Users/HUAWEI/CLionProjects/forest/Commn.h
+cstdarg
+-
+
+C:/Users/HUAWEI/CLionProjects/forest/Commn.h
+cstdio
+-
+cstdlib
+-
+

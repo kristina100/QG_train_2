@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/HUAWEI/CLionProjects/Sort/Common.h
+stdlib.h
+-
+stdio.h
+-
+
+C:/Users/HUAWEI/CLionProjects/Sort/main.c
+stdio.h
+-
+Common.h
+C:/Users/HUAWEI/CLionProjects/Sort/Common.h
+
+C:/Users/HUAWEI/CLionProjects/Sort/sort.c
+Common.h
+C:/Users/HUAWEI/CLionProjects/Sort/Common.h
+

@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/HUAWEI/CLionProjects/SqStack/Common.h
+
+C:/Users/HUAWEI/CLionProjects/SqStack/SqStack.c
+SqStack.h
+C:/Users/HUAWEI/CLionProjects/SqStack/SqStack.h
+stdio.h
+-
+stdlib.h
+-
+
+C:/Users/HUAWEI/CLionProjects/SqStack/SqStack.h
+Common.h
+C:/Users/HUAWEI/CLionProjects/SqStack/Common.h
+
+C:/Users/HUAWEI/CLionProjects/SqStack/main.c
+SqStack.h
+C:/Users/HUAWEI/CLionProjects/SqStack/SqStack.h
+

@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/HUAWEI/CLionProjects/CH03/Common.h
+cstdio
+-
+cstdlib
+-
+ctime
+-
+
+C:/Users/HUAWEI/CLionProjects/CH03/RcdSqList.h
+Common.h
+C:/Users/HUAWEI/CLionProjects/CH03/Common.h
+
+C:/Users/HUAWEI/CLionProjects/CH03/main.cpp
+iostream
+-
+RcdSqList.h
+C:/Users/HUAWEI/CLionProjects/CH03/RcdSqList.h
+

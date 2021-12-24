@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/HUAWEI/CLionProjects/RedBlack/Function.h
+define.h
+C:/Users/HUAWEI/CLionProjects/RedBlack/define.h
+
+C:/Users/HUAWEI/CLionProjects/RedBlack/define.h
+stdio.h
+-
+stdlib.h
+-
+
+C:/Users/HUAWEI/CLionProjects/RedBlack/main.c
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
+Windows.h
+-
+Function.h
+C:/Users/HUAWEI/CLionProjects/RedBlack/Function.h
+

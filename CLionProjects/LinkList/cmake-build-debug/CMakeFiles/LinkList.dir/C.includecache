@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/HUAWEI/CLionProjects/LinkList/Common.h
+stdlib.h
+-
+stdio.h
+-
+
+C:/Users/HUAWEI/CLionProjects/LinkList/LinkList.c
+LinkList.h
+C:/Users/HUAWEI/CLionProjects/LinkList/LinkList.h
+stdio.h
+-
+stdlib.h
+-
+
+C:/Users/HUAWEI/CLionProjects/LinkList/LinkList.h
+Common.h
+C:/Users/HUAWEI/CLionProjects/LinkList/Common.h
+
+C:/Users/HUAWEI/CLionProjects/LinkList/main.c
+stdio.h
+-
+LinkList.h
+C:/Users/HUAWEI/CLionProjects/LinkList/LinkList.h
+

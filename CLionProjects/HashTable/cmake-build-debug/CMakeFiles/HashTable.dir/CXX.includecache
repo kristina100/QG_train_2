@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/HUAWEI/CLionProjects/HashTable/CHashTable.cpp
+CHashTable.h
+C:/Users/HUAWEI/CLionProjects/HashTable/CHashTable.h
+
+C:/Users/HUAWEI/CLionProjects/HashTable/CHashTable.h
+Common.h
+C:/Users/HUAWEI/CLionProjects/HashTable/Common.h
+HashTable.h
+C:/Users/HUAWEI/CLionProjects/HashTable/HashTable.h
+
+C:/Users/HUAWEI/CLionProjects/HashTable/Common.h
+cstdio
+-
+cstdlib
+-
+ctime
+-
+
+C:/Users/HUAWEI/CLionProjects/HashTable/HashTable.h
+
+C:/Users/HUAWEI/CLionProjects/HashTable/main.cpp
+iostream
+-
+CHashTable.h
+C:/Users/HUAWEI/CLionProjects/HashTable/CHashTable.h
+

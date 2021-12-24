@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/HUAWEI/CLionProjects/B-Tree/btree.cpp
+cstdio
+-
+btree.h
+C:/Users/HUAWEI/CLionProjects/B-Tree/btree.h
+
+C:/Users/HUAWEI/CLionProjects/B-Tree/btree.h
+linklist.h
+C:/Users/HUAWEI/CLionProjects/B-Tree/linklist.h
+
+C:/Users/HUAWEI/CLionProjects/B-Tree/linklist.h
+cstdlib
+-
+
+C:/Users/HUAWEI/CLionProjects/B-Tree/main.cpp
+iostream
+-
+cstdio
+-
+ctime
+-
+btree.h
+C:/Users/HUAWEI/CLionProjects/B-Tree/btree.h
+

@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/HUAWEI/CLionProjects/GA/function.h
+
+C:/Users/HUAWEI/CLionProjects/GA/main.cpp
+cstdio
+-
+cstdlib
+-
+cmath
+-
+ctime
+-
+cstring
+-
+direct.h
+-
+random
+-
+function.h
+C:/Users/HUAWEI/CLionProjects/GA/function.h
+

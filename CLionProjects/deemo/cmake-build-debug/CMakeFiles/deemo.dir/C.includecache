@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/HUAWEI/CLionProjects/deemo/BPlusTree.h
+
+C:/Users/HUAWEI/CLionProjects/deemo/main.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+time.h
+-
+BPlusTree.h
+C:/Users/HUAWEI/CLionProjects/deemo/BPlusTree.h
+
